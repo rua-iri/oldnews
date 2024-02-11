@@ -6,19 +6,23 @@ export default function ArticleContainer() {
     const [articlesShown, setArticlesShown] = React.useState(10);
     const [articlesData, setArticlesData] = React.useState(null);
 
-    const getArticlesData = () => {
-        fetch("http://localhost:8000/today")
-            .then(response => response.json())
-            .then(artisData => setArticlesData(artisData))
-            .catch(err => console.log(err))
+    const getArticlesData = async () => {
+        try {
+            const apiResponse = await fetch("https://oldnews-backend.rory-mcguigan.workers.dev/api");
+            const apiData = await apiResponse.json();
+            console.log(apiData);
+            setArticlesData(apiData)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
-    useEffect(() => getArticlesData(), []);
+    useEffect(() => { getArticlesData() }, []);
 
     const totalArtCount = articlesData?.length;
 
     //increase the number of articles shown when the user clicks the button
-    function showMoreArts() {
+    function showMoreArticles() {
         console.log("Showing " + articlesShown);
 
         if (articlesShown <= (totalArtCount - 5)) {
@@ -35,16 +39,16 @@ export default function ArticleContainer() {
                 <Article
                     key={index}
                     index={index}
-                    headline={article.headline.main}
+                    headline={article.headline}
                     temporaryContent={article.abstract}
                     section={article.section_name}
-                    author={article.byline.person}
+                    author={article.author}
                     link={article.web_url} />
             ))}
 
-            <button className="articles-button" onClick={showMoreArts}>
+            {/* <button className="articles-button" onClick={showMoreArticles}>
                 See More
-            </button>
+            </button> */}
         </div>
     )
 }
