@@ -16,7 +16,7 @@ export default {
 
 		if (pathname === "/api") {
 			const { results } = await env.DB.prepare(
-				"SELECT * FROM news WHERE day=? AND month=? LIMIT 10"
+				"SELECT * FROM news WHERE day=? AND month=? ORDER BY RANDOM() LIMIT 5;"
 			)
 				.bind(todayDate.getDate(), todayDate.getMonth())
 				.all();
