@@ -1,0 +1,66 @@
+
+@font-face {
+  font-family: "Kimberley";
+  src: url("/fonts/kimbalt_.ttf");
+}
+
+@font-face {
+  font-family: ModeSeven;
+  src: url("/fonts/Modeseven-L3n5.ttf");
+}
+
+body {
+  background-color: #010101;
+  color: #1fc742;
+}
+
+a {
+  color: #1fc742;
+}
+
+
+.App {
+  text-align: center;
+}
+
+.header-bar {
+  border: 1px solid #023612;
+  font-size: 4rem;
+  font-family: "Kimberley";
+  padding: 2rem;
+}
+
+
+.article-container {
+  border: 1px solid #023612;
+}
+
+.article-title {
+  border: 1px solid #025b18;
+  margin-bottom: 15px;
+  padding: 0.5rem;
+  font-family: ModeSeven;
+  font-size: 2rem;
+}
+
+.article-main {
+  border: 1px solid #023612;
+  margin: 25px;
+  padding: 0.5rem;
+  font-family: ModeSeven;
+  font-size: 1.5rem;
+}
+
+.articles-button {
+  border: 0.2rem solid #025b18;
+  background-color: #010101;
+  color: #1fc742;
+  margin-bottom: 15px;
+  padding: 0.5rem;
+  font-family: ModeSeven;
+  font-size: 2.5rem;
+}
+
+.articles-button:active {
+  background-color: #023612;
+}
