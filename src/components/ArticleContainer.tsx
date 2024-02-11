@@ -13,8 +13,7 @@ export default function ArticleContainer() {
             .catch(err => console.log(err))
     }
 
-    //only query api once
-    useEffect(() => getArticlesData(), [])
+    useEffect(() => getArticlesData(), []);
 
     const totalArtCount = articlesData?.length;
 
@@ -32,15 +31,15 @@ export default function ArticleContainer() {
 
     return (
         <div className="article-container">
-            {articlesData?.slice(0, articlesShown).map((arti, index) => (
+            {articlesData?.slice(0, articlesShown).map((article, index) => (
                 <Article
                     key={index}
                     index={index}
-                    headline={arti.headline.main}
-                    temporaryContent={arti.abstract}
-                    section={arti.section_name}
-                    author={arti.byline.person}
-                    link={arti.web_url} />
+                    headline={article.headline.main}
+                    temporaryContent={article.abstract}
+                    section={article.section_name}
+                    author={article.byline.person}
+                    link={article.web_url} />
             ))}
 
             <button className="articles-button" onClick={showMoreArts}>

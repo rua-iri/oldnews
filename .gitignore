@@ -26,3 +26,4 @@ dist-ssr
 
 # database is very large
 *.sqlite
+*.sql
