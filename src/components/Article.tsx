@@ -15,7 +15,7 @@ export default function Article(props: any) {
             <div>
                 {props.author == undefined ? props.author : ""}
             </div>
-            <div>
+            <div className="article-link">
                 <a href={props.link}>
                     Source
                 </a>
