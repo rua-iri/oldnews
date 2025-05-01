@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: "Kimberley";
   src: url("/fonts/kimbalt_.ttf");
@@ -9,13 +8,20 @@
   src: url("/fonts/Modeseven-L3n5.ttf");
 }
 
+:root {
+  --default-green: #1fc742;
+  --dark-green: #025b18;
+  --default-grey: #023612;
+  --dark-grey: #010101;
+}
+
 body {
-  background-color: #010101;
-  color: #1fc742;
+  background-color: var(--dark-grey);
+  color: var(--default-green);
 }
 
 a {
-  color: #1fc742;
+  color: var(--default-green);
 }
 
 
@@ -24,7 +30,7 @@ a {
 }
 
 .header-bar {
-  border: 1px solid #023612;
+  border: 1px solid var(--default-grey);
   font-size: 4rem;
   font-family: "Kimberley";
   padding: 2rem;
@@ -33,11 +39,11 @@ a {
 
 
 .article-container {
-  border: 1px solid #023612;
+  border: 1px solid var(--default-grey);
 }
 
 .article-title {
-  border: 1px solid #025b18;
+  border: 1px solid var(--dark-green);
   margin-bottom: 15px;
   padding: 0.5rem;
   font-family: ModeSeven;
@@ -45,7 +51,7 @@ a {
 }
 
 .article-main {
-  border: 1px solid #023612;
+  border: 1px solid var(--default-grey);
   margin: 25px;
   padding: 0.5rem;
   font-family: ModeSeven;
@@ -53,9 +59,9 @@ a {
 }
 
 .articles-button {
-  border: 0.2rem solid #025b18;
-  background-color: #010101;
-  color: #1fc742;
+  border: 0.2rem solid var(--dark-green);
+  background-color: var(--dark-grey);
+  color: var(--default-green);
   margin-bottom: 15px;
   padding: 0.5rem;
   font-family: ModeSeven;
@@ -63,10 +69,68 @@ a {
 }
 
 .articles-button:active {
-  background-color: #023612;
+  background-color: var(--default-grey);
 }
 
 .article-link {
   margin-top: 1rem;
   font-size: 1.75rem;
+}
+
+.loading-container {
+  display: flex;
+}
+
+.loading-box {
+  background-color: #571b1b;
+  border: solid 2px var(--default-grey);
+  width: 10%;
+  height: 3rem;
+  animation: changeLoadingBG 0.1s forwards;
+}
+
+.loading-box:nth-child(1) {
+  animation-delay: 0.1s
+}
+
+.loading-box:nth-child(2) {
+  animation-delay: 0.2s
+}
+
+.loading-box:nth-child(3) {
+  animation-delay: 0.3s
+}
+
+.loading-box:nth-child(4) {
+  animation-delay: 0.4s
+}
+
+.loading-box:nth-child(5) {
+  animation-delay: 0.5s
+}
+
+.loading-box:nth-child(6) {
+  animation-delay: 0.6s
+}
+
+.loading-box:nth-child(7) {
+  animation-delay: 0.7s
+}
+
+.loading-box:nth-child(8) {
+  animation-delay: 0.8s
+}
+
+.loading-box:nth-child(9) {
+  animation-delay: 0.9s
+}
+
+.loading-box:nth-child(10) {
+  animation-delay: 1s
+}
+
+@keyframes changeLoadingBG {
+  to {
+    background-color: var(--default-green);
+  }
 }
