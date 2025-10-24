@@ -16,8 +16,8 @@ export default {
 		}
 
 		const todayDate = new Date();
-		const searchDay = searchParams.get('day') || todayDate.getDate() + 1;
-		const searchMonth = searchParams.get('month') || todayDate.getMonth();
+		const searchDay = searchParams.get('day') || todayDate.getDate();
+		const searchMonth = searchParams.get('month') || todayDate.getMonth() + 1;
 
 		const selectArticlesQuery = `
 		SELECT *
