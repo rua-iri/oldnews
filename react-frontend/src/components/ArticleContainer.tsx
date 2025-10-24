@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import Article from "./Article";
+import ErrorMessage from "./ErrorMessage";
 
 export default function ArticleContainer() {
   const articlesShown = 10;
   const [articlesData, setArticlesData] = useState(null);
+  const [isErrorLoading, setIsErrorLoading] = useState(false);
 
   const getArticlesData = async () => {
     try {
@@ -11,10 +13,9 @@ export default function ArticleContainer() {
         "https://oldnews-backend.rory-mcguigan.workers.dev/api"
       );
       const apiData = await apiResponse.json();
-      console.log(apiData);
       setArticlesData(apiData);
     } catch (error) {
-      console.log(error);
+      setIsErrorLoading(true);
     }
   };
 
@@ -38,6 +39,8 @@ export default function ArticleContainer() {
         ))}
       </div>
     );
+  } else if (isErrorLoading) {
+    return <ErrorMessage message="Unable to load articles" />;
   } else {
     return (
       <div className="article-container">
