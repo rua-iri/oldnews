@@ -1,25 +1,22 @@
 import ArticleTitle from "./ArticleTitle";
+import { articleProps } from "../types";
 
-export default function Article(props: any) {
-
-
-    return (
-        <div className="article-main">
-            <ArticleTitle title={props.headline} />
-            <div>
-                {props.temporaryContent}
-            </div>
-            <div>
-                Section: {props.section}
-            </div>
-            <div>
-                {props.author == undefined ? props.author : ""}
-            </div>
-            <div className="article-link">
-                <a href={props.link}>
-                    Source
-                </a>
-            </div>
-        </div>
-    )
+export default function Article({
+  headline,
+  temporaryContent,
+  section,
+  author,
+  link,
+}: articleProps) {
+  return (
+    <div className="article-main">
+      <ArticleTitle title={headline} />
+      <div>{temporaryContent}</div>
+      <div>Section: {section}</div>
+      <div>{author == undefined ? author : ""}</div>
+      <div className="article-link">
+        <a href={link}>Source</a>
+      </div>
+    </div>
+  );
 }
